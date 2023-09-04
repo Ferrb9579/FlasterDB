@@ -1,3 +1,20 @@
 [workspace]
 resolver = "2"
 members = ["library", "engine"]
+
+[env]
+# Set ENV_VAR_NAME=value for any process run by Cargo
+ENV_VAR_NAME = "value"
+
+[profile.dev]
+opt-level = 0
+debug = "full"
+lto = false
+incremental = true
+codegen-units = 256
+
+[profile.release]
+opt-level = 3
+debug = "none"
+lto = true
+codegen-units = 16

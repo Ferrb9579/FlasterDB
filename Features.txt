@@ -1,0 +1,90 @@
+Flaster Database
+
+/data : dir
+ - config.json {}
+ - namespaces.json {}
+ - namespace_name : dir
+   - config.json
+   - databases.json
+   - database_name : dir
+     - metadata.json
+     - config.json
+     - tables.json
+     - table_name : dir
+       - config.json {}
+       - metadata.json
+       - data.json {}
+       - unsized_data.json
+       - table_definition.json
+       - variable.json
+       - index.json {}
+       - buckets : dir
+         - buckets.json
+         - bucket_name : dir
+           - metadata.json
+           - commit_log.bin
+           - sstable.bin
+
+Partition (Yet to be Brainstormed), Ranges (Yet to be Brainstormed), Sharding (Yet to be Brainstormed)
+
+
+Data Types
+1  string(size: usize > Optional)
+2  array(size: usize > Optional)
+3  set(size: usize > Optional)
+4  object
+5  datetime
+6  duration
+7  usize   (Might get replaced with appropriate system bit)
+8  u8
+9  u16
+10 u32
+11 u64
+12 u128
+13 isize   (Might get replaced with appropriate system bit)
+14 i8
+15 i16
+16 i32
+17 i64
+18 i128
+19 fsize   (Might get replaced with appropriate system bit)
+20 f32
+21 f64
+22 bool
+23 pointer     (New, Cheack whether you need it)
+24 function    (New, Cheack whether you need it)
+25 enum        (New, Cheack whether you need it)
+26 struct      (New, Cheack whether you need it)
+27 union       (New, Cheack whether you need it)
+28 interface   (New, Cheack whether you need it)
+29 any         (New, Cheack whether you need it)
+30 unknown     (New, Cheack whether you need it)
+31 blob        (New, Cheack whether you need it)
+
+Add intermediate types like for the number that specifies array element index prefixed with a type
+
+31/32 bits => u5
+
+Data Handling
+ - 
+
+Connection Types:
+ - TCP
+ - UDP
+ - HTTP
+ - HTTPS
+ - FTP
+ - SFTP
+ - SMTP
+ - WebSocket
+
+Plugin System
+ - Adding plugins to plugins folder auto imports them and runs the start function
+
+File Structure
+ - src/
+   - routines
+   - service
+   - tasks
+   - server
+   - utils
